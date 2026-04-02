@@ -773,6 +773,111 @@ footer {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 
+/* ─── COMPANION JOIN SECTION ─── */
+.companion-join-section {
+  background: var(--surface-warm);
+  padding: 0;
+}
+.companion-join-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; padding: 6rem 3rem;
+  align-items: flex-start;
+}
+.cj-block-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-muted); margin-bottom: 1.2rem;
+}
+.cj-items { display: flex; flex-direction: column; gap: 0; }
+.cj-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.cj-item:last-child { border-bottom: none; }
+.cj-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--rose); flex-shrink: 0; margin-top: 0.45rem;
+}
+.cj-item-title {
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 0.25rem;
+}
+.cj-item-desc {
+  font-size: 0.79rem; color: var(--ink-muted);
+  line-height: 1.65; font-weight: 300;
+}
+.cj-perks-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 0.5px solid var(--border);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+.cj-perk {
+  padding: 1.2rem 1.4rem;
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+.cj-perk:nth-child(2) { border-right: none; }
+.cj-perk:nth-child(3) { border-bottom: none; }
+.cj-perk:nth-child(4) { border-right: none; border-bottom: none; }
+.cj-perk-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--ink); line-height: 1; margin-bottom: 0.25rem;
+}
+.cj-perk-key {
+  font-size: 0.7rem; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--ink-muted);
+}
+
+/* Apply strip */
+.companion-apply {
+  background: var(--ink);
+  padding: 3.5rem 3rem;
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 4rem; align-items: center;
+}
+.apply-eyebrow {
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--rose-mid); margin-bottom: 0.7rem;
+}
+.apply-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 400;
+  color: white; line-height: 1.15; margin-bottom: 0.7rem;
+}
+.apply-desc {
+  font-size: 0.83rem; color: rgba(255,255,255,0.4);
+  line-height: 1.7; font-weight: 300;
+}
+.apply-fields { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.8rem; }
+.apply-input {
+  background: rgba(255,255,255,0.06);
+  border: 0.5px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem; color: white;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  outline: none; transition: border-color 0.2s;
+  width: 100%;
+}
+.apply-input::placeholder { color: rgba(255,255,255,0.3); }
+.apply-input:focus { border-color: rgba(255,255,255,0.35); }
+.apply-select { appearance: none; cursor: pointer; }
+.apply-select option { background: #0D0D0F; color: white; }
+.apply-btn {
+  width: 100%; background: var(--rose);
+  color: white; border: none;
+  border-radius: var(--r); padding: 0.85rem;
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.2s;
+}
+.apply-btn:hover { background: var(--rose-mid); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1000px) {
   nav { padding: 1rem 1.5rem; }
@@ -799,6 +904,9 @@ footer {
   .chat-bubble.pos2 { right: 10px; }
   .sticky-cta { display: block; }
   body { padding-bottom: 70px; }
+  .companion-join-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+  .companion-apply { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+  .cj-perks-grid { grid-template-columns: 1fr 1fr; }
   .final-cta { padding: 5rem 1.5rem; }
   footer { padding: 2rem 1.5rem; }
 }
@@ -812,6 +920,7 @@ footer {
   <div class="nav-links">
     <a href="#companions">Companions</a>
     <a href="#how">How It Works</a>
+    <a href="#become-companion">For Companions</a>
     <a href="#pricing">Pricing</a>
     <a href="#companions" class="nav-cta">Begin Free</a>
   </div>
@@ -1153,6 +1262,105 @@ footer {
       <p class="trust-desc">Share anything — your fears, dreams, strange 2am thoughts. This is your space. We honor every part of you.</p>
     </div>
   </div>
+</section>
+
+<!-- FOR COMPANIONS -->
+<section class="companion-join-section" id="become-companion">
+  <div class="companion-join-inner">
+
+    <div class="companion-join-left">
+      <div class="section-label">For Companions</div>
+      <h2 class="section-title">Turn meaningful<br>conversations into<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">real income.</em></h2>
+      <p class="section-sub">Join a curated network of empathetic, emotionally intelligent companions. Set your own schedule. Work from anywhere. Make a genuine difference in someone's day.</p>
+      <a href="#companion-apply" class="btn-primary" style="margin-top:2rem;display:inline-block;">Apply to Join →</a>
+      <div style="margin-top:1.5rem;font-size:0.78rem;color:var(--ink-muted);letter-spacing:0.03em;">Applications reviewed within 48 hours · Limited spots open</div>
+    </div>
+
+    <div class="companion-join-right">
+
+      <div class="cj-block">
+        <div class="cj-block-label">What you'll do</div>
+        <div class="cj-items">
+          <div class="cj-item">
+            <div class="cj-dot"></div>
+            <div>
+              <div class="cj-item-title">Have real conversations</div>
+              <p class="cj-item-desc">Chat with members who need a listener, a laugh, or just someone who cares. No scripts — just you, being genuinely present.</p>
+            </div>
+          </div>
+          <div class="cj-item">
+            <div class="cj-dot"></div>
+            <div>
+              <div class="cj-item-title">Set your own hours</div>
+              <p class="cj-item-desc">Go online when it suits you. Morning, evening, weekends — you decide. There's no minimum hour requirement to start.</p>
+            </div>
+          </div>
+          <div class="cj-item">
+            <div class="cj-dot"></div>
+            <div>
+              <div class="cj-item-title">Build meaningful connections</div>
+              <p class="cj-item-desc">Members return because they value you. The more consistent you are, the deeper and more rewarding the relationships become.</p>
+            </div>
+          </div>
+          <div class="cj-item">
+            <div class="cj-dot"></div>
+            <div>
+              <div class="cj-item-title">Maintain clear boundaries</div>
+              <p class="cj-item-desc">Solace is a companionship platform — emotional support only. Our guidelines protect both you and your members at all times.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cj-block" style="margin-top:2rem;">
+        <div class="cj-block-label">What you'll earn & get</div>
+        <div class="cj-perks-grid">
+          <div class="cj-perk">
+            <div class="cj-perk-val">₹400–₹800</div>
+            <div class="cj-perk-key">per hour (avg)</div>
+          </div>
+          <div class="cj-perk">
+            <div class="cj-perk-val">Weekly</div>
+            <div class="cj-perk-key">payouts</div>
+          </div>
+          <div class="cj-perk">
+            <div class="cj-perk-val">Full</div>
+            <div class="cj-perk-key">profile support</div>
+          </div>
+          <div class="cj-perk">
+            <div class="cj-perk-val">Private</div>
+            <div class="cj-perk-key">companion dashboard</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Apply Form Strip -->
+  <div class="companion-apply" id="companion-apply">
+    <div class="apply-left">
+      <div class="apply-eyebrow">Ready to apply?</div>
+      <h3 class="apply-title">It takes 3 minutes</h3>
+      <p class="apply-desc">Tell us a little about yourself. We look for warmth, emotional intelligence, and reliability — not a specific background.</p>
+    </div>
+    <div class="apply-form">
+      <div class="apply-fields">
+        <input type="text" placeholder="Your name" class="apply-input"/>
+        <input type="email" placeholder="Email address" class="apply-input"/>
+        <select class="apply-input apply-select">
+          <option value="" disabled selected>Why do you want to join?</option>
+          <option>I love listening and supporting others</option>
+          <option>I want flexible income from home</option>
+          <option>I've been through difficult times and want to help</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="apply-btn">Submit Application →</button>
+      <div style="font-size:0.72rem;color:var(--ink-muted);margin-top:0.8rem;letter-spacing:0.03em;">We'll reply within 48 hours. Your information stays private.</div>
+    </div>
+  </div>
+
 </section>
 
 <!-- FINAL CTA -->
